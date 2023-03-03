@@ -7,6 +7,10 @@ import puppeteer from "puppeteer";
 
 const app = fastify();
 
+app.get("/", async (request, reply) => {
+  reply.send({ hello: "world" });
+});
+
 app.post("/url", async (request, reply) => {
   console.time()
   const createUserSchema = z.object({
