@@ -1,14 +1,11 @@
 import fastify from "fastify";
 import { z } from "zod"
-import { PrismaClient } from "@prisma/client";
 import fs from "fs";
 import path from "path";
 import https from "https";
 import puppeteer from "puppeteer";
 
 const app = fastify();
-
-const prisma = new PrismaClient();
 
 app.post("/url", async (request, reply) => {
   console.time()
