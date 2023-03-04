@@ -20,9 +20,11 @@ app.post("/url", async (request, reply) => {
   const { url } = createUserSchema.parse(request.body);
 
   try {
+    console.log({vou: 'iniciar o browser'})
     const browser = await puppeteer.launch({
       headless: true
     });
+    console.log({vou: 'criar uma nova pagina'})
     const page = await browser.newPage();
   
     await page.goto(url);
